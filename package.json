@@ -1,0 +1,40 @@
+{
+  "name": "grunt-inline-web-components",
+  "version": "0.1.0",
+  "main": "tasks/inline_web_components.js",
+  "description": "Inline web components' template files into an HTML file",
+  "homepage": "https://github.com/fredrikekelund/grunt-inline-web-components",
+  "bugs": "https://github.com/fredrikekelund/grunt-inline-web-components/issues",
+  "author": {
+    "name": "Fredrik Ekelund",
+    "email": "fredrik@fredrik.computer",
+    "url": "http://fredrik.computer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fredrikekelund/grunt-inline-web-components.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "chalk": "~0.5.1",
+    "inline-web-components": "~0.1.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-mocha-cli": "~1.9.0",
+    "jshint-stylish": "~0.2.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
