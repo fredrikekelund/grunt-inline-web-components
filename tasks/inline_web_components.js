@@ -13,25 +13,26 @@ var inlineComponent = require("inline-web-components"),
 
 module.exports = function(grunt) {
 	grunt.registerMultiTask("inline_web_components", "Inline web component content in HTML files", function() {
-		var options = this.options();
+		var options = this.options({
+			separator: "\n"
+		});
 
 		this.files.forEach(function(file) {
-			var valid = file.src.filter(function(filepath) {
+			var compiled = file.src.filter(function(filepath) {
 				if (!grunt.file.exists(filepath)) {
 					grunt.log.warn("Source file " + chalk.cyan(filepath) + " not found.");
 					return false;
 				} else {
 					return true;
 				}
-			});
+			}).map(function(filepath) {
+				var source = grunt.file.read(filepath);
 
-			valid.forEach(function(validFile) {
-				var source   = grunt.file.read(validFile),
-					compiled = inlineComponent(source, options.components);
+				return inlineComponent(source, options.components);
+			}).join(grunt.util.normalizelf(options.separator));
 
-				grunt.file.write(file.dest, compiled);
-				grunt.verbose.writeln("File " + chalk.cyan(file.dest) + " created");
-			});
+			grunt.file.write(file.dest, compiled);
+			grunt.verbose.writeln("File " + chalk.cyan(file.dest) + " created");
 		});
 	});
 };

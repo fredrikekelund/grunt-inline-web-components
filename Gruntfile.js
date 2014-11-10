@@ -23,6 +23,9 @@ module.exports = function(grunt) {
 				"test/*.js"
 			]
 		},
+		clean: {
+			test: "test/result.html"
+		},
 		mochacli: {
 			options: {
 				reporter: "nyan",
@@ -49,10 +52,11 @@ module.exports = function(grunt) {
 	grunt.loadTasks("tasks");
 
 	// These plugins provide necessary tasks.
+	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-mocha-cli");
 
-	grunt.registerTask("test", ["inline_web_components", "mochacli"]);
+	grunt.registerTask("test", ["clean", "inline_web_components", "mochacli"]);
 	grunt.registerTask("default", ["jshint", "test"]);
 
 };
