@@ -55,7 +55,8 @@ Each key is a jQuery style selector, its value is a path to a template file to i
 
 ## Release History
 
- * 9 Nov 2014   v0.1.0   Initial release
+ * 10 Nov 2014  v0.2.0   If more than one source files are specified for a single destination file, the source files will be merged
+ * 9 Nov 2014   v0.1.0   Initial release
 
 ## License
 
