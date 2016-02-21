@@ -1,6 +1,6 @@
 {
   "name": "grunt-inline-web-components",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "tasks/inline_web_components.js",
   "description": "Inline web components' template files into an HTML file",
   "homepage": "https://github.com/fredrikekelund/grunt-inline-web-components",
